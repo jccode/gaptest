@@ -50,7 +50,16 @@ var app = {
     },
 
     simpleTest: function() {
-        var msg = document.getElementById('msg');
+        var msg = document.getElementById('deviceinfo');
         msg.innerHTML = device.platform + " " + device.model;
+    },
+
+    localNotification: function() {
+        window.plugin.notification.local.add({
+            id: 1,
+            title: "GAP Test", 
+            message: "hello. This is a sample notification"
+        });
+        console.log('push a local notification');
     }
 };
