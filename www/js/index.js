@@ -61,5 +61,22 @@ var app = {
             message: "hello. This is a sample notification"
         });
         console.log('push a local notification');
+    },
+
+    scan: function() {
+        var msgEl = document.getElementById('msg');
+        cordova.plugins.barcodeScanner.scan(
+            function (result) {
+                var msg= "We got a barcode\n" +
+                        "Result: " + result.text + "\n" +
+                        "Format: " + result.format + "\n" +
+                        "Cancelled: " + result.cancelled;
+                msgEl.innerHTML = msg;
+            }, 
+            function (error) {
+                var msg = "Scanning failed: " + error;
+                msgEl.innerHTML = msg;
+            }
+        );     
     }
 };
