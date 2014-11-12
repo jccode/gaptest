@@ -2,3 +2,5 @@ platforms/
 plugins/
 node_modules/
 asserts/
+.done
+.tern-port
