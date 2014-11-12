@@ -1,5 +1,5 @@
 
-angular.module('gaptest', ['ui.router', 'ngTouch', 'ngSanitize', 'ui-bootstrap'])
+angular.module('gaptest', ['ui.router', 'ngTouch', 'ngSanitize' ]) // 'ui-bootstrap'
 
     .constant("_", window._)
 
@@ -18,10 +18,12 @@ angular.module('gaptest', ['ui.router', 'ngTouch', 'ngSanitize', 'ui-bootstrap']
         });
     }])
 
-    .config('$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         // $stateProvider
         //     .state('home', {
         //     })
-        
-    })
+
+        $urlRouterProvider.otherwise('/');
+    }])
 ;
+
