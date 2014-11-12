@@ -1,5 +1,5 @@
 
-angular.module('gaptest', ['ui.router', 'ngTouch', 'ngSanitize' ]) // 'ui-bootstrap'
+angular.module('gaptest', ['ui.router', 'ngTouch', 'ngSanitize', 'mobile-angular-ui', 'ui.bootstrap' ]) 
 
     .constant("_", window._)
 
