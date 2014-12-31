@@ -56,11 +56,21 @@ var app = {
     },
 
     localNotification: function() {
-        window.plugin.notification.local.add({
-            id: 1,
-            title: "GAP Test", 
-            message: "hello. This is a sample notification"
+        var msgEl = document.getElementById('msg');
+        window.plugin.notification.local.promptForPermission();
+        window.plugin.notification.local.hasPermission(function (granted) {
+            if(granted) {
+                window.plugin.notification.local.add({
+                    id: 1,
+                    title: "GAP Test", 
+                    message: "hello. This is a sample notification"
+                });
+            }
+            else {
+                msgEl.innerHTML = "you don't have the notification permission";
+            }
         });
+
         console.log('push a local notification');
     },
 

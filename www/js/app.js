@@ -8,11 +8,11 @@ angular.module('gaptest', ['ui.router', 'ngTouch', 'ngSanitize', 'mobile-angular
         $rootScope.$on('deviceready', function(e) {
             console.log('bootstrap');
 
-            window.plugin.notification.local.add({
-                id: 1,
-                title: "GAP Test", 
-                message: "device ready trigger inside angular."
-            });
+            // window.plugin.notification.local.add({
+            //     id: 1,
+            //     title: "GAP Test", 
+            //     message: "device ready trigger inside angular."
+            // });
             console.log('device ready trigger inside angular.');
             
         });
